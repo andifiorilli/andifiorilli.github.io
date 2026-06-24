@@ -228,6 +228,8 @@ body{
     .header{
         display:grid;
         grid-template-columns:52px 1fr 52px;
+        grid-template-rows:auto;
+        grid-template-areas:none;
         align-items:center;
 
         padding:18px 22px;
@@ -239,13 +241,16 @@ body{
     }
 
     .logo{
+        grid-area:auto;
         grid-column:2;
+        grid-row:1;
         justify-self:center;
         align-self:center;
     }
 
     .logo img{
         height:48px;
+        width:auto;
         display:block;
     }
 
@@ -265,16 +270,19 @@ body{
         border:1.5px solid var(--black);
 
         align-self:center;
-        transform:translateY(-1px);
     }
 
     .links a:first-child{
+        grid-area:auto;
         grid-column:1;
+        grid-row:1;
         justify-self:start;
     }
 
     .links a:last-child{
+        grid-area:auto;
         grid-column:3;
+        grid-row:1;
         justify-self:end;
     }
 
