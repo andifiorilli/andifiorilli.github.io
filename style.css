@@ -108,17 +108,12 @@ body{
 
 .gallery{
     width:100%;
-    padding:16px;
+    padding:32px 24px 80px;
 
     display:grid;
+    grid-template-columns:repeat(3, 1fr);
 
-    grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(320px,1fr)
-    );
-
-    gap:16px;
+    gap:56px 24px;
 }
 
 /* =========================
@@ -141,6 +136,12 @@ body{
     opacity:.85;
 }
 
+.thumb{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
+
 .thumb img{
     width:100%;
     height:100%;
@@ -151,7 +152,7 @@ body{
 .project-title{
     position:relative;
 
-    margin-top:8px;
+    margin-top:12px;
     padding:0 14px 10px 0;
 
     border-bottom:1px solid var(--black);
@@ -176,24 +177,24 @@ body{
     border-bottom:10px solid var(--black);
 }
 
-/* =========================
-   RATIOS
-========================= */
+@media (max-width:1100px){
 
-.hero{
-    aspect-ratio:16/9;
+    .gallery{
+        grid-template-columns:repeat(2, 1fr);
+        gap:44px 20px;
+        padding:24px 20px 72px;
+    }
+
 }
 
-.vertical{
-    aspect-ratio:4/5;
-}
+@media (max-width:768px){
 
-.square{
-    aspect-ratio:1/1;
-}
+    .gallery{
+        grid-template-columns:1fr;
+        gap:28px;
+        padding:20px 14px 56px;
+    }
 
-.tall{
-    aspect-ratio:3/4;
 }
 
 /* =========================
@@ -289,139 +290,12 @@ body{
 }
 
 /* =========================
-   PROJECT PAGE
-========================= */
-
-.project-page{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 360px;
-    gap:40px;
-    padding:40px;
-}
-
-.project-gallery{
-    column-count:2;
-    column-gap:14px;
-}
-
-.project-gallery img{
-    width:100%;
-    display:block;
-    margin-bottom:14px;
-}
-
-.project-info{
-    position:sticky;
-    top:100px;
-    align-self:start;
-}
-
-.project-info h1{
-    font-size:14px;
-    font-weight:400;
-    text-transform:uppercase;
-    margin-bottom:20px;
-}
-
-.project-info p{
-    font-size:13px;
-    line-height:1.6;
-    margin-bottom:20px;
-}
-
-.project-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-bottom:24px;
-}
-
-.project-tags span{
-    font-family:var(--font-mono);
-    font-weight:400;
-    font-size:10px;
-    line-height:1;
-
-    border:1px solid var(--black);
-    padding:5px 7px;
-    border-radius:999px;
-}
-
-.project-links{
-    display:flex;
-    gap:12px;
-    margin-bottom:24px;
-}
-
-.project-links a{
-    width:28px;
-    height:28px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border:1.5px solid var(--black);
-    border-radius:50%;
-
-    color:var(--black);
-    text-decoration:none;
-
-    font-size:11px;
-    line-height:1;
-}
-
-.project-links a:hover{
-    background:var(--black);
-    color:var(--white);
-}
-
-.project-year{
-    font-size:12px;
-}
-
-.back{
-    color:var(--black);
-    text-decoration:none;
-}
-
-.back:hover{
-    opacity:.5;
-}
-
-/* =========================
-   PROJECT MOBILE
-========================= */
-
-@media (max-width:900px){
-
-    .project-page{
-        display:flex;
-        flex-direction:column;
-        padding:20px;
-    }
-
-    .project-info{
-        order:1;
-        position:relative;
-        top:auto;
-        margin-bottom:30px;
-    }
-
-    .project-gallery{
-        order:2;
-        column-count:1;
-    }
-
-}
-
-/* =========================
    EDITORIAL PROJECT LAYOUT
 ========================= */
 
 .project-hero{
     width:100%;
-    height:68vh;
+    aspect-ratio:16/7;
     background:#e6e6e6;
     overflow:hidden;
 }
@@ -457,7 +331,8 @@ body{
     font-weight:700;
     font-size:18px;
     line-height:1.1;
-    margin-bottom:24px;
+
+    margin-bottom:20px;
 }
 
 .project-copy p{
@@ -465,8 +340,65 @@ body{
     font-weight:400;
     font-size:12px;
     line-height:1.55;
-    margin-bottom:14px;
+
+    margin-bottom:18px;
     max-width:760px;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+
+    margin-top:24px;
+    margin-bottom:28px;
+}
+
+.project-tags span{
+    font-family:var(--font-mono);
+    font-weight:400;
+    font-size:10px;
+    line-height:1;
+
+    border:1px solid var(--black);
+    padding:5px 7px;
+    border-radius:999px;
+}
+
+.project-links{
+    display:flex;
+    gap:10px;
+
+    margin-bottom:28px;
+}
+
+.project-links a{
+    width:30px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1.5px solid var(--black);
+    border-radius:50%;
+
+    color:var(--black);
+    text-decoration:none;
+
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:11px;
+    line-height:1;
+}
+
+.project-links a:visited{
+    color:var(--black);
+}
+
+.project-links a:hover{
+    background:var(--black);
+    color:var(--white);
 }
 
 .project-nav{
@@ -483,6 +415,10 @@ body{
     text-decoration:none;
 }
 
+.project-nav a:visited{
+    color:var(--black);
+}
+
 .project-nav a:hover{
     opacity:.5;
 }
@@ -491,7 +427,9 @@ body{
     font-family:var(--font-mono);
     font-weight:400;
     font-size:12px;
-    margin-top:28px;
+
+    margin-top:0;
+    margin-bottom:56px;
 }
 
 .project-gallery-editorial{
@@ -516,7 +454,7 @@ body{
 @media (max-width:900px){
 
     .project-hero{
-        height:60vh;
+        aspect-ratio:4/4;
     }
 
     .project-detail{
@@ -530,16 +468,23 @@ body{
         margin-bottom:40px;
     }
 
-    .project-copy{
-        max-width:none;
-    }
-
     .project-nav{
-        gap:14px;
+        order:-1;
+
+        align-self:center;
+
+        display:flex;
+        gap:18px;
+
+        margin-top:-60px;
+        padding:8px 16px;
+
+        background:var(--gray);
+        z-index:10;
     }
 
-    .project-nav a:visited{
-    color:var(--black);
+    .project-nav a{
+        font-size:12px;
     }
 
     .project-gallery-editorial{
@@ -547,7 +492,6 @@ body{
     }
 
 }
-
 /* =========================
    FOOTER
 ========================= */
@@ -556,8 +500,10 @@ body{
     padding:40px 24px 56px;
 
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
+    gap:28px;
 }
 
 .to-top{
@@ -572,16 +518,6 @@ body{
 
 .to-top:hover{
     opacity:.5;
-}
-
-.footer{
-    padding:40px 24px 56px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:28px;
 }
 
 .footer-credit{
