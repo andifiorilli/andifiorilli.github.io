@@ -596,7 +596,7 @@ body{
 
 .index-footer{
     width:100%;
-    height:100px;
+    height:30px;
 
     background:var(--black);
     color:var(--white);
@@ -610,8 +610,8 @@ body{
 }
 
 .index-footer p{
-    font-family:var(--font-mono);
-    font-weight:700;
+    font-family:var(--font-compact);
+    font-weight:400;
     font-size:11px;
     line-height:1.2;
     text-align:center;
