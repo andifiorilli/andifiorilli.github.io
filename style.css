@@ -14,6 +14,18 @@
     box-sizing:border-box;
 }
 
+.sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space:nowrap;
+    border:0;
+}
+
 html{
     scroll-behavior:smooth;
 }
@@ -182,7 +194,8 @@ body{
     border-bottom:none;
 }
 
-.project:hover .project-title{
+.project:hover .project-title,
+.project:focus-visible .project-title{
     opacity:1;
 }
 
@@ -204,29 +217,6 @@ body{
         padding:14px 14px 28px;
     }
 
-}
-
-/* =========================
-   PLACEHOLDER
-========================= */
-
-.placeholder{
-    width:100%;
-    height:100%;
-
-    background:#e6e6e6;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:#777;
-
-    font-size:12px;
-    letter-spacing:1px;
-    text-align:center;
-
-    padding:20px;
 }
 
 /* =========================
@@ -545,12 +535,6 @@ body{
     width:100%;
     height:auto;
     display:block;
-}
-
-.project-gallery-editorial video{
-    display:block;
-    width:100%;
-    height:auto;
 }
 
 .project-video-vertical{
