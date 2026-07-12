@@ -353,6 +353,10 @@ body{
     background:var(--white);
 }
 
+.project-owl-paper .project-detail{
+    padding-bottom:0;
+}
+
 .project-do-not-say{
     background:
         radial-gradient(circle at top left, rgba(255,255,255,.55), transparent 34%),
@@ -618,6 +622,10 @@ body{
     opacity:1;
 }
 
+.owl-mobile-carousel{
+    display:none;
+}
+
 /* =========================
    EDITORIAL PROJECT MOBILE
 ========================= */
@@ -662,48 +670,55 @@ body{
         gap:18px;
     }
 
-    .owl-sequence{
-        min-height:140vh;
+    .project-owl-paper .owl-story{
+        display:flex;
+        flex-direction:column;
+        gap:18px;
+
+        padding:18px 0;
+
+        background:var(--white);
     }
 
-    .project-owl-paper .owl-story{
-        background:var(--white);
+    .project-owl-paper .owl-sequence{
+        min-height:auto;
     }
 
     .project-owl-paper .owl-stage{
-        top:85px;
+        display:none;
+    }
+
+    .owl-mobile-carousel{
+        display:flex;
+        gap:10px;
 
         width:100%;
-        height:calc(100vh - 85px);
+        padding:0 14px;
 
-        margin:0;
+        overflow-x:auto;
+        overscroll-behavior-x:contain;
 
-        background:var(--white);
+        scroll-snap-type:x mandatory;
+        scroll-padding:0 14px;
+
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
     }
 
-    .project-owl-paper .owl-canvas,
-    .project-owl-paper .owl-fallback{
-        top:50%;
-        bottom:auto;
-        left:14px;
-        right:auto;
+    .owl-mobile-carousel::-webkit-scrollbar{
+        display:none;
+    }
 
-        width:calc(100% - 28px);
-        height:calc(50vw - 14px);
+    .owl-mobile-carousel img{
+        flex:0 0 calc(100vw - 28px);
 
-        transform:translateY(-50%);
-    }
-    .project-owl-paper .owl-sequence[data-sequence="1"]{
-        min-height:730vh;
-    }
-    .project-owl-paper .owl-sequence[data-sequence="2"]{
-        min-height:380vh;
-    }
-    .project-owl-paper .owl-sequence[data-sequence="3"]{
-        min-height:380vh;
-    }
-    .project-owl-paper .owl-sequence[data-sequence="4"]{
-        min-height:940vh;
+        width:calc(100vw - 28px);
+        height:auto;
+
+        display:block;
+
+        scroll-snap-align:start;
+        scroll-snap-stop:always;
     }
 }
 
