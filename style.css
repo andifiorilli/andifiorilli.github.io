@@ -120,7 +120,7 @@ body{
 
 .gallery{
     width:100%;
-    padding:24px 24px 40px;
+    padding:24px;
 
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -204,7 +204,7 @@ body{
     .gallery{
         grid-template-columns:repeat(2, 1fr);
         gap:20px 20px;
-        padding:20px 20px 36px;
+        padding:20px;
     }
 
 }
@@ -214,7 +214,7 @@ body{
     .gallery{
         grid-template-columns:1fr;
         gap:14px;
-        padding:14px 14px 28px;
+        padding:14px;
     }
 
 }
@@ -662,7 +662,7 @@ body{
         gap:18px;
     }
 
-        .owl-sequence{
+    .owl-sequence{
         min-height:140vh;
     }
 
@@ -671,16 +671,40 @@ body{
     }
 
     .project-owl-paper .owl-stage{
-        top:calc(50vh - 25vw + 49.5px);
+        top:85px;
 
-        width:calc(100% - 28px);
-        height:calc(50vw - 14px);
+        width:100%;
+        height:calc(100vh - 85px);
 
-        margin:0 auto;
+        margin:0;
 
         background:var(--white);
     }
 
+    .project-owl-paper .owl-canvas,
+    .project-owl-paper .owl-fallback{
+        top:50%;
+        bottom:auto;
+        left:14px;
+        right:auto;
+
+        width:calc(100% - 28px);
+        height:calc(50vw - 14px);
+
+        transform:translateY(-50%);
+    }
+    .project-owl-paper .owl-sequence[data-sequence="1"]{
+        min-height:730vh;
+    }
+    .project-owl-paper .owl-sequence[data-sequence="2"]{
+        min-height:380vh;
+    }
+    .project-owl-paper .owl-sequence[data-sequence="3"]{
+        min-height:380vh;
+    }
+    .project-owl-paper .owl-sequence[data-sequence="4"]{
+        min-height:940vh;
+    }
 }
 
 .home{
