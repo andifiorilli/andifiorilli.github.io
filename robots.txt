@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andifiorilli.github.io/sitemap.xml
